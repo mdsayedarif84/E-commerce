@@ -1,4 +1,21 @@
-## About Laravel
+## Laravel8.x E-ecommerce Website
+## Feature's
+  .add & manage category,Brand,product & order information
+  .product add to cart, quantiy update & delete cart product
+  .Login,Logout, user authenticatin & registration feature's
+  .View invoice & download system,
+##Use Laravel8.x,PHP,MYSQL,Html,Css,Javascript,Bootstrap & Jquery
+## Project Screenshort
+
+![front-page1](https://user-images.githubusercontent.com/33853494/124703326-eb4d0c80-df13-11eb-98f8-31141c4bdabb.png)
+![frontPage](https://user-images.githubusercontent.com/33853494/124703342-f4d67480-df13-11eb-9fba-ea5b6ea6b546.png)
+![manageOrder](https://user-images.githubusercontent.com/33853494/124703417-1899ba80-df14-11eb-89cb-54e1bda33716.png)
+![viewOrder1](https://user-images.githubusercontent.com/33853494/124703531-4e3ea380-df14-11eb-8514-7ee285f2a1ef.png)
+![viewOrder1](https://user-images.githubusercontent.com/33853494/124703587-5eef1980-df14-11eb-9a47-9672e2e0cd02.png)
+![downloadInvoice](https://user-images.githubusercontent.com/33853494/124703606-657d9100-df14-11eb-8133-19ed5026d3dd.png)
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
@@ -9,9 +26,6 @@
 </p>
 
 ## About Laravel
-##Laravel 8.x E-commerce Website::
-## Featute's
-
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
 - [Simple, fast routing engine](https://laravel.com/docs/routing).
