@@ -6,7 +6,6 @@
   <p>.View invoice & download system,</p>
 <p><b>Use Laravel8.x,PHP,MYSQL,Html,Css,Javascript,Bootstrap & Jquery</b></p>
 ## Project Screenshort
-
 ![front-page1](https://user-images.githubusercontent.com/33853494/124705023-d32abc80-df16-11eb-8e6a-62cf8f967ec2.png)
 ![newProduct1](https://user-images.githubusercontent.com/33853494/124704876-9c54a680-df16-11eb-9e14-0b7f35879d44.png)
 ![details](https://user-images.githubusercontent.com/33853494/124704912-ac6c8600-df16-11eb-86df-92ac1efeee58.png)
