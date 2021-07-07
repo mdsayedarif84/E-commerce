@@ -4,7 +4,9 @@
   <p>.product add to cart, quantiy update & delete cart product</p>
   <p>.Login,Logout, user authenticatin & registration feature's</p>
   <p>.View invoice & download system,</p>
-<p><b>Use Laravel8.x,PHP,MYSQL,Html,Css,Javascript,Bootstrap & Jquery</b></p>
+  <p>
+    <b>Use Laravel8.x,PHP,MYSQL,Html,Css,Javascript,Bootstrap & Jquery</b></p>
+
 ## Project Screenshort
 
 ![front-page1](https://user-images.githubusercontent.com/33853494/124705023-d32abc80-df16-11eb-8e6a-62cf8f967ec2.png)
