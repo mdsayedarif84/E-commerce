@@ -1,9 +1,9 @@
 ## Laravel8.x E-ecommerce Website
 ## Feature's
-  <p>.add & manage category,Brand,product & order information</p>
-  <p>.product add to cart, quantiy update & delete cart product</p>
-  <p>.Login,Logout, user authenticatin & registration feature's</p>
-  <p>.View invoice & download system,</p>
+  -<p>add & manage category,Brand,product & order information</p>
+  -<p>product add to cart, quantiy update & delete cart product</p>
+  -<p>Login,Logout, user authenticatin & registration feature's</p>
+  -<p>View invoice & download system,</p>
   <p>
     <b>Use Laravel8.x,PHP,MYSQL,Html,Css,Javascript,Bootstrap & Jquery</b></p>
 
