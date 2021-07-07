@@ -6,6 +6,7 @@
   <p>.View invoice & download system,</p>
 <p><b>Use Laravel8.x,PHP,MYSQL,Html,Css,Javascript,Bootstrap & Jquery</b></p>
 ## Project Screenshort
+
 ![front-page1](https://user-images.githubusercontent.com/33853494/124705023-d32abc80-df16-11eb-8e6a-62cf8f967ec2.png)
 ![newProduct1](https://user-images.githubusercontent.com/33853494/124704876-9c54a680-df16-11eb-9e14-0b7f35879d44.png)
 ![details](https://user-images.githubusercontent.com/33853494/124704912-ac6c8600-df16-11eb-86df-92ac1efeee58.png)
@@ -15,9 +16,6 @@
 ![manageOrder](https://user-images.githubusercontent.com/33853494/124703417-1899ba80-df14-11eb-89cb-54e1bda33716.png)
 ![viewOrder1](https://user-images.githubusercontent.com/33853494/124703531-4e3ea380-df14-11eb-8514-7ee285f2a1ef.png)
 ![downloadInvoice](https://user-images.githubusercontent.com/33853494/124703606-657d9100-df14-11eb-8133-19ed5026d3dd.png)
-
-
-
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
