@@ -7,8 +7,6 @@
 ##Use Laravel8.x,PHP,MYSQL,Html,Css,Javascript,Bootstrap & Jquery
 ## Project Screenshort
 
-![front-page1](https://user-images.githubusercontent.com/33853494/124703326-eb4d0c80-df13-11eb-98f8-31141c4bdabb.png)
-![frontPage](https://user-images.githubusercontent.com/33853494/124704115-5ba85d80-df15-11eb-92cb-de109e999ed6.png)
 ![frontPage](https://user-images.githubusercontent.com/33853494/124703342-f4d67480-df13-11eb-9fba-ea5b6ea6b546.png)
 ![manageOrder](https://user-images.githubusercontent.com/33853494/124703417-1899ba80-df14-11eb-89cb-54e1bda33716.png)
 ![viewOrder1](https://user-images.githubusercontent.com/33853494/124703531-4e3ea380-df14-11eb-8514-7ee285f2a1ef.png)
