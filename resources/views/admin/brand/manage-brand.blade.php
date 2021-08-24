@@ -14,19 +14,22 @@
                 </h4>
             </div>
             <div class="card-body">
-                <form method="post" action="">
-                    <table class="table table-dark table-striped">
+                <div class="table-responsive">
+                    <table class="table table-dark table-striped" id="dataTable" width="100%" cellspacing="0">
                         @if($message   =   Session::get('message'))
                             <h1 class="text-center text-primary" id="msg">{{ $message }}</h1>
                         @endif
-                        <tr class="text-center text-uppercase text-info">
+                        <thead>
+							<tr class="text-center text-uppercase text-info">
                             <th>ID </th>
                             <th>Category Name</th>
                             <th>Category Description</th>
                             <th>Publication Status</th>
                             <th style="width: 150px">Action</th>
                         </tr>
-                        @php($i=1)
+						</thead>
+                        <tbody>
+						@php($i=1)
                         @foreach($brands as $brand)
                             <tr class="text-center">
                                 <td>{{ $i++ }}</td>
@@ -53,6 +56,7 @@
                                 </td>
                             </tr>
                         @endforeach
+						</tbody>
                     </table>
                 </form>
             </div>

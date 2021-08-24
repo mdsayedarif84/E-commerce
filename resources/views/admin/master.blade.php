@@ -16,7 +16,8 @@
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
-
+	{{--        data table link--}}
+        <link href="{!! asset('/admin') !!}/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <!-- Custom styles for this template-->
     <link href="{{ asset('') }}/admin/css/sb-admin-2.min.css" rel="stylesheet">
 
@@ -28,6 +29,7 @@
 
     <link rel="stylesheet" href="{{ asset('') }}/admin/ckeditor/samples/css/samples.css">
     <link rel="stylesheet" href="{{ asset('') }}/admin/ckeditor/samples/toolbarconfigurator/lib/codemirror/neo.css">
+	<!--ckeditor/ckeditor end -->
 </head>
 
 <body id="page-top">
@@ -96,6 +98,11 @@
 <!-- Page level custom scripts -->
 <script src="{{ asset('/admin') }}/js/demo/chart-area-demo.js"></script>
 <script src="{{ asset('/admin') }}/js/demo/chart-pie-demo.js"></script>
+{{--    data table script--}}
+        <script src="{!! asset('/admin') !!}/vendor/datatables/jquery.dataTables.min.js"></script>
+        <script src="{!! asset('/admin') !!}/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+        <!-- Page level custom scripts -->
+        <script src="{!! asset('/admin') !!}/js/demo/datatables-demo.js"></script>
 <script>
     $(document).ready(function (){
         $('#msg').click(function (){
