@@ -60,6 +60,18 @@ class ProductController extends Controller
                                             ->get();
         return view('admin.product.manage-product',['products'=>$products]);
     }
+    public function unpublishedProductInfo($id){
+        $product      =   Product::find($id);
+        $product->publication_status  =   0;
+        $product->save();
+        return redirect('/product/manage')->with('message','Product info unpublished successfully');
+    }
+    public function publishedProductInfo($id){
+        $product      =   Product::find($id);
+        $product->publication_status  =   1;
+        $product->save();
+        return redirect('/product/manage')->with('message','Product info published successfully');
+    }
     public function editProductInfo($id){
         $product      =   Product::find($id);
         $categories         =   Category::where('publication_status',1)->get();
@@ -97,5 +109,10 @@ class ProductController extends Controller
             $this->productBasicInfoUpdate($product, $request);
         }
         return redirect('/product/manage')->with('message','Product Info Update Successfully');
+    }
+    public function deleteProductInfo($id){
+        $product      =   Product::find($id);
+        $product->delete();
+        return redirect('/product/manage')->with('message','Product info delete successfully');
     }
 }

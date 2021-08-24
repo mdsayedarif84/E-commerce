@@ -69,7 +69,7 @@ _________________________________________________________
                 <p class="text-center text-lg-left">©2021 Your name goes here.</p>
             </div>
             <div class="col-lg-6">
-                <p class="text-center text-lg-right">Template design by <a href="https://bootstrapious.com/p/big-bootstrap-tutorial">MD. Sayed Arif</a>
+                <p class="text-center text-lg-right">Template developed by <a href="https://bootstrapious.com/p/big-bootstrap-tutorial">MD. Sayed Arif</a>
                     <!-- If you want to remove this backlink, pls purchase an Attribution-free License @ https://bootstrapious.com/p/obaju-e-commerce-template. Big thanks!-->
                 </p>
             </div>

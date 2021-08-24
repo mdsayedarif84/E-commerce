@@ -26,8 +26,8 @@
             </a>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <a class="collapse-item" href="{{ url('/category/add-category') }}">Add Category</a>
-                    <a class="collapse-item" href="{{ url('/category/manage-category') }}">Manage Category</a>
+                    <a class="collapse-item" href="{{ route('add-category') }}">Add Category</a>
+                    <a class="collapse-item" href="{{ route('manage-category') }}">Manage Category</a>
                 </div>
             </div>
         </li>
@@ -57,6 +57,20 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     <a class="collapse-item" href="{{ route('add-product') }}">Add Product</a>
                     <a class="collapse-item" href="{{ route('manage-product') }}">Manage Product</a>
+                </div>
+            </div>
+        </li>
+{{--        slider image--}}
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#slider"
+               aria-expanded="true" aria-controls="collapseUtilities">
+                <i class="fas fa-fw fa-folder"></i>
+                <span>Slider</span>
+            </a>
+            <div id="slider" class="collapse" aria-labelledby="headingUtilities"
+                 data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item" href="{!! route('view-slider') !!}">Slider</a>
                 </div>
             </div>
         </li>

@@ -29,28 +29,13 @@
                             </div>
                             <div class="card-body">
                                 <ul class="nav nav-pills flex-column category-menu">
-                                    <li><a href="category.html" class="nav-link">Men <span class="badge badge-secondary">42</span></a>
+                                    <li>
                                         <ul class="list-unstyled">
-                                            <li><a href="category.html" class="nav-link">T-shirts</a></li>
-                                            <li><a href="category.html" class="nav-link">Shirts</a></li>
-                                            <li><a href="category.html" class="nav-link">Pants</a></li>
-                                            <li><a href="category.html" class="nav-link">Accessories</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="category.html" class="nav-link active">Ladies  <span class="badge badge-light">123</span></a>
-                                        <ul class="list-unstyled">
-                                            <li><a href="category.html" class="nav-link">T-shirts</a></li>
-                                            <li><a href="category.html" class="nav-link">Skirts</a></li>
-                                            <li><a href="category.html" class="nav-link">Pants</a></li>
-                                            <li><a href="category.html" class="nav-link">Accessories</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="category.html" class="nav-link">Kids  <span class="badge badge-secondary">11</span></a>
-                                        <ul class="list-unstyled">
-                                            <li><a href="category.html" class="nav-link">T-shirts</a></li>
-                                            <li><a href="category.html" class="nav-link">Skirts</a></li>
-                                            <li><a href="category.html" class="nav-link">Pants</a></li>
-                                            <li><a href="category.html" class="nav-link">Accessories</a></li>
+                                            <ul class="list-unstyled">
+                                                @foreach($categories as $category)
+                                                    <li class="nav-item"><a href="{{ route('category-product',['id'=>$category->id,'name'=>$category->category_name]) }}" class="nav-link">{{ $category->category_name }}</a></li>
+                                                @endforeach
+                                            </ul>
                                         </ul>
                                     </li>
                                 </ul>
@@ -61,31 +46,9 @@
                                 <h3 class="h4 card-title">Brands <a href="#" class="btn btn-sm btn-danger pull-right"><i class="fa fa-times-circle"></i> Clear</a></h3>
                             </div>
                             <div class="card-body">
-                                <form>
-                                    <div class="form-group">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox"> Armani  (10)
-                                            </label>
-                                        </div>
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox"> Versace  (12)
-                                            </label>
-                                        </div>
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox"> Carlo Bruni  (15)
-                                            </label>
-                                        </div>
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox"> Jack Honey  (14)
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <button class="btn btn-default btn-sm btn-primary"><i class="fa fa-pencil"></i> Apply</button>
-                                </form>
+                                @foreach($brands as $brand)
+                                    <li class="nav-item"> {{ $brand->brand_name }}</li>
+                                @endforeach
                             </div>
                         </div>
                         <div class="card sidebar-menu mb-4">
@@ -93,36 +56,7 @@
                                 <h3 class="h4 card-title">Colours <a href="#" class="btn btn-sm btn-danger pull-right"><i class="fa fa-times-circle"></i> Clear</a></h3>
                             </div>
                             <div class="card-body">
-                                <form>
-                                    <div class="form-group">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox"><span class="colour white"></span> White (14)
-                                            </label>
-                                        </div>
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox"><span class="colour blue"></span> Blue (10)
-                                            </label>
-                                        </div>
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox"><span class="colour green"></span>  Green (20)
-                                            </label>
-                                        </div>
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox"><span class="colour yellow"></span>  Yellow (13)
-                                            </label>
-                                        </div>
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox"><span class="colour red"></span>  Red (10)
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <button class="btn btn-default btn-sm btn-primary"><i class="fa fa-pencil"></i> Apply</button>
-                                </form>
+
                             </div>
                         </div>
                         <!-- *** MENUS AND FILTERS END ***-->
@@ -200,19 +134,19 @@
                         <div class="row same-height-row">
                             <div class="col-md-3 col-sm-6">
                                 <div class="box same-height">
-                                    <h3>You may also like these products</h3>
+                                    <h3>This Picture is view for sample</h3>
                                 </div>
                             </div>
                             <div class="col-md-3 col-sm-6">
                                 <div class="product same-height">
                                     <div class="flip-container">
                                         <div class="flipper">
-                                            <div class="front"><a href=""><img src="{{ asset('/') }}/front-end/imgs//product2.jpg" alt="" class="img-fluid"></a></div>
-                                            <div class="back"><a href=""><img src="{{ asset('/') }}/front-end/imgs//product2_2.jpg" alt="" class="img-fluid"></a></div>
+                                            <div class="front"><a href=""><img src="{{ asset('/') }}/product-image/Apple Macintosh.jpg" alt="" class="img-fluid"></a></div>
+                                            <div class="back"><a href=""><img src="{{ asset('/') }}/product-image/Apple Macintosh.jpg" alt="" class="img-fluid"></a></div>
                                         </div>
-                                    </div><a href="" class="invisible"><img src="{{ asset('/') }}/front-end/imgs//product2.jpg" alt="" class="img-fluid"></a>
+                                    </div><a href="" class="invisible"><img src="{{ asset('/') }}/product-image/Apple Macintosh.jpg" alt="" class="img-fluid"></a>
                                     <div class="text">
-                                        <h3>Fur coat</h3>
+                                        <h3>Apple Macintosh</h3>
                                         <p class="price">$143</p>
                                     </div>
                                 </div>
@@ -222,87 +156,34 @@
                                 <div class="product same-height">
                                     <div class="flip-container">
                                         <div class="flipper">
-                                            <div class="front"><a href=""><img src="{{ asset('/') }}/front-end/imgs//product1.jpg" alt="" class="img-fluid"></a></div>
-                                            <div class="back"><a href=""><img src="{{ asset('/') }}/front-end/imgs//product1_2.jpg" alt="" class="img-fluid"></a></div>
+                                            <div class="front"><a href=""><img src="{{ asset('/') }}/product-image/Xplorer zv.jpg" alt="" class="img-fluid"></a></div>
+                                            <div class="back"><a href=""><img src="{{ asset('/') }}//product-image/Xplorer zv.jpg" alt="" class="img-fluid"></a></div>
                                         </div>
-                                    </div><a href="" class="invisible"><img src="{{ asset('/') }}/front-end/imgs//product1.jpg" alt="" class="img-fluid"></a>
+                                    </div><a href="" class="invisible"><img src="{{ asset('/') }}/product-image/Xplorer zv.jpg" alt="" class="img-fluid"></a>
                                     <div class="text">
-                                        <h3>Fur coat</h3>
+                                        <h3>Xplorer zv.jpg</h3>
                                         <p class="price">$143</p>
-                                        <p class="buttons"><a href="" class="btn btn-outline-secondary">View detail</a><a href="#" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add to cart</a></p>
+                                    </div>
+                                </div>
+                                <!-- /.product-->
+                            </div>
+                            <div class="col-md-3 col-sm-6">
+                                <div class="product same-height">
+                                    <div class="flip-container">
+                                        <div class="flipper">
+                                            <div class="front"><a href="#"><img src="{{ asset('/') }}/product-image/Pluser ns160.jpg" alt="" class="img-fluid"></a></div>
+                                            <div class="back"><a href="#"><img src="{{ asset('/') }}/product-image/Pluser ns160.jpg" alt="" class="img-fluid"></a></div>
+                                        </div>
+                                    </div><a href="#" class="invisible"><img src="{{ asset('/') }}/product-image/Pluser ns160.jpg" alt="" class="img-fluid"></a>
+                                    <div class="text">
+                                        <h3>Pluser ns160</h3>
+                                        <p class="price">$143</p>
+                                    </div>
+                                </div>
+                                <!-- /.product-->
+                            </div>
+                        </div>
 
-                                    </div>
-                                </div>
-                                <!-- /.product-->
-                            </div>
-                            <div class="col-md-3 col-sm-6">
-                                <div class="product same-height">
-                                    <div class="flip-container">
-                                        <div class="flipper">
-                                            <div class="front"><a href="#"><img src="{{ asset('/') }}/front-end/imgs//product3.jpg" alt="" class="img-fluid"></a></div>
-                                            <div class="back"><a href="#"><img src="{{ asset('/') }}/front-end/imgs//product3_2.jpg" alt="" class="img-fluid"></a></div>
-                                        </div>
-                                    </div><a href="#" class="invisible"><img src="{{ asset('/') }}/front-end/imgs//product3.jpg" alt="" class="img-fluid"></a>
-                                    <div class="text">
-                                        <h3>Fur coat</h3>
-                                        <p class="price">$143</p>
-                                    </div>
-                                </div>
-                                <!-- /.product-->
-                            </div>
-                        </div>
-                        <div class="row same-height-row">
-                            <div class="col-md-3 col-sm-6">
-                                <div class="box same-height">
-                                    <h3>Products viewed recently</h3>
-                                </div>
-                            </div>
-                            <div class="col-md-3 col-sm-6">
-                                <div class="product same-height">
-                                    <div class="flip-container">
-                                        <div class="flipper">
-                                            <div class="front"><a href="#"><img src="{{ asset('/') }}/front-end/imgs//product2.jpg" alt="" class="img-fluid"></a></div>
-                                            <div class="back"><a href="#"><img src="{{ asset('/') }}/front-end/imgs//product2_2.jpg" alt="" class="img-fluid"></a></div>
-                                        </div>
-                                    </div><a href="#" class="invisible"><img src="{{ asset('/') }}/front-end/imgs//product2.jpg" alt="" class="img-fluid"></a>
-                                    <div class="text">
-                                        <h3>Fur coat</h3>
-                                        <p class="price">$143</p>
-                                    </div>
-                                </div>
-                                <!-- /.product-->
-                            </div>
-                            <div class="col-md-3 col-sm-6">
-                                <div class="product same-height">
-                                    <div class="flip-container">
-                                        <div class="flipper">
-                                            <div class="front"><a href="#"><img src="{{ asset('/') }}/front-end/imgs//product1.jpg" alt="" class="img-fluid"></a></div>
-                                            <div class="back"><a href="#"><img src="{{ asset('/') }}/front-end/imgs//product1_2.jpg" alt="" class="img-fluid"></a></div>
-                                        </div>
-                                    </div><a href="#" class="invisible"><img src="{{ asset('/') }}/front-end/imgs//product1.jpg" alt="" class="img-fluid"></a>
-                                    <div class="text">
-                                        <h3>Fur coat</h3>
-                                        <p class="price">$143</p>
-                                    </div>
-                                </div>
-                                <!-- /.product-->
-                            </div>
-                            <div class="col-md-3 col-sm-6">
-                                <div class="product same-height">
-                                    <div class="flip-container">
-                                        <div class="flipper">
-                                            <div class="front"><a href="#"><img src="{{ asset('/') }}/front-end/imgs//product3.jpg" alt="" class="img-fluid"></a></div>
-                                            <div class="back"><a href="#"><img src="{{ asset('/') }}/front-end/imgs//product3_2.jpg" alt="" class="img-fluid"></a></div>
-                                        </div>
-                                    </div><a href="#" class="invisible"><img src="{{ asset('/') }}/front-end/imgs//product3.jpg" alt="" class="img-fluid"></a>
-                                    <div class="text">
-                                        <h3>Fur coat</h3>
-                                        <p class="price">$143</p>
-                                    </div>
-                                </div>
-                                <!-- /.product-->
-                            </div>
-                        </div>
                     </div>
 
                     <!-- /.col-md-9-->

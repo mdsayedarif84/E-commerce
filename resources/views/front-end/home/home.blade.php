@@ -3,111 +3,135 @@
     Home
 @endsection
 @section('body')
-
-    <div id="all">
+    <div id="all" class="pr-1" >
         <div id="content">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div id="main-slider" class="owl-carousel owl-theme">
-                            <div class="item"><img src="{{ asset('/') }}/front-end/imgs/main-slider1.jpg" alt="" class="img-fluid"></div>
-                            <div class="item"><img src="{{ asset('/') }}/front-end/imgs/main-slider2.jpg" alt="" class="img-fluid"></div>
-                            <div class="item"><img src="{{ asset('/') }}/front-end/imgs/main-slider3.jpg" alt="" class="img-fluid"></div>
-                            <div class="item"><img src="{{ asset('/') }}/front-end/imgs/main-slider4.jpg" alt="" class="img-fluid"></div>
-                        </div>
-                        <!-- /#main-slider-->
-                    </div>
-                </div>
-            </div>
-            <!--
-            *** ADVANTAGES HOMEPAGE ***
-            _________________________________________________________
-            -->
-            <div id="advantages">
+            <section style="background: url('{{asset('/')}}/front-end/imgs/yahama-150.jpg'); background-size: 100% 100%; background-attachment: fixed;">
                 <div class="container">
-                    <div class="row mb-4">
-                        <div class="col-md-4">
-                            <div class="box clickable d-flex flex-column justify-content-center mb-0 h-100">
-                                <div class="icon"><i class="fa fa-heart"></i></div>
-                                <h3><a href="#">We love our customers</a></h3>
-                                <p class="mb-0">We are known to provide best possible service ever</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="box clickable d-flex flex-column justify-content-center mb-0 h-100">
-                                <div class="icon"><i class="fa fa-tags"></i></div>
-                                <h3><a href="#">Best prices</a></h3>
-                                <p class="mb-0">You can check that the height of the boxes adjust when longer text like this one is used in one of them.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="box clickable d-flex flex-column justify-content-center mb-0 h-100">
-                                <div class="icon"><i class="fa fa-thumbs-up"></i></div>
-                                <h3><a href="#">100% satisfaction guaranteed</a></h3>
-                                <p class="mb-0">Free returns on everything for 3 months.</p>
+                    <div class="row">
+                        <div class="col-sm-12 col-xl-12 col-md-12">
+                            <div id="mySlider" class="carousel slide" data-ride="carousel" data-interval="5000">
+                                <ol class="carousel-indicators">
+                                    <li class="active" data-target="#mySlider" data-slide-to="0"></li>
+                                    <li class="" data-target="#mySlider" data-slide-to="1"></li>
+                                    <li class="" data-target="#mySlider" data-slide-to="2"></li>
+                                    <li class="" data-target="#mySlider" data-slide-to="3"></li>
+                                    <li class="" data-target="#mySlider" data-slide-to="4"></li>
+                                </ol>
+                                <div class="carousel-inner">
+                                    @php $i = 1; @endphp
+                                    @foreach( $slider as $slider)
+                                        <div class="carousel-item {{ $i == '1' ? 'active':'' }} ">
+                                            @php $i++; @endphp
+                                            <img src="{!! asset('upload/slider/'.$slider->image) !!}" alt=""  class="d-block w-100" style="height: 500px;width: 100px;"/>
+                                            <div class="carousel-caption">
+                                                <h2 class="text-info">{!! $slider->headding !!}</h2>
+                                                <p class="bg-danger">{!! $slider->description !!}</p>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                                <a href="#mySlider" class="carousel-control-prev" data-slide="prev">
+                                    <span class="carousel-control-prev-icon"></span>
+                                </a>
+                                <a href="#mySlider" class="carousel-control-next" data-slide="next" >
+                                    <span class="carousel-control-next-icon"></span>
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <!-- /.row-->
                 </div>
-                <!-- /.container-->
-            </div>
+                <!--
+                *** ADVANTAGES HOMEPAGE ***
+                _________________________________________________________
+                -->
+                <div id="advantages" class="">
+                    <div class="container">
+                        <div class="row mb-4">
+                            <div class="col-md-4">
+                                <div class="box clickable d-flex flex-column justify-content-center mb-0 h-100">
+                                    <div class="icon"><i class="fa fa-heart"></i></div>
+                                    <h3><a href="#">We love our customers</a></h3>
+                                    <p class="mb-0">We are known to provide best possible service ever</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="box clickable d-flex flex-column justify-content-center mb-0 h-100">
+                                    <div class="icon"><i class="fa fa-tags"></i></div>
+                                    <h3><a href="#">Best prices</a></h3>
+                                    <p class="mb-0">You can check that the height of the boxes adjust when longer text like this one is used in one of them.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="box clickable d-flex flex-column justify-content-center mb-0 h-100">
+                                    <div class="icon"><i class="fa fa-thumbs-up"></i></div>
+                                    <h3><a href="#">100% satisfaction guaranteed</a></h3>
+                                    <p class="mb-0">Free returns on everything for 3 months.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.row-->
+                    </div>
+                    <!-- /.container-->
+                </div>
+            </section>
             <!-- /#advantages-->
             <!-- *** ADVANTAGES END ***-->
             <!--
             *** HOT PRODUCT SLIDESHOW ***
             _________________________________________________________
             -->
-            <div id="hot">
-                <div class="box py-4">
+            <section style="background: url('{{asset('/')}}/front-end/imgs/slider3.jpg'); background-size: 100% 100%; background-attachment: fixed;" >
+                <div id="hot">
+                    <div class="box py-4">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h2 class="mb-0">Hot New Brand</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="container">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h2 class="mb-0">Hot New Brand</h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="product-slider owl-carousel owl-theme">
-                        @foreach( $newProducts as $newProduct)
-                        <div class="item">
-                            <div class="product">
-                                <div class="flip-container">
-                                    <div class="flipper">
-                                        <div class="front">
-                                            <a href="">
-                                                <img src="{{ asset($newProduct->product_image) }}" alt="" class="img-fluid">
-                                            </a>
+                        <div class="product-slider owl-carousel owl-theme">
+                            @foreach( $newProducts as $newProduct)
+                                <div class="item">
+                                    <div class="product">
+                                        <div class="flip-container">
+                                            <div class="flipper">
+                                                <div class="front">
+                                                    <a href="">
+                                                        <img src="{{ asset($newProduct->product_image) }}" alt="" class="img-fluid">
+                                                    </a>
+                                                </div>
+                                                <div class="back">
+                                                    <a href="">
+                                                        <img src="{{ asset($newProduct->product_image) }}" alt="" class="img-fluid">
+                                                    </a>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="back">
-                                            <a href="">
-                                                <img src="{{ asset($newProduct->product_image) }}" alt="" class="img-fluid">
-                                            </a>
+                                        <a href="" class="invisible">
+                                            <img src="{{ asset($newProduct->product_image) }}" alt="" class="img-fluid"></a>
+                                        <div class="text">
+                                            <h3><a href="">{!! $newProduct->product_name !!}</a></h3>
+                                            <p class="price">
+                                                <del></del>{!! $newProduct->product_price !!}
+                                            </p>
                                         </div>
+                                        <!-- /.text-->
+                                        <!-- /.ribbon-->
                                     </div>
+                                    <!-- /.product-->
                                 </div>
-                                <a href="" class="invisible">
-                                    <img src="{{ asset($newProduct->product_image) }}" alt="" class="img-fluid"></a>
-                                <div class="text">
-                                    <h3><a href="">{!! $newProduct->product_name !!}</a></h3>
-                                    <p class="price">
-                                        <del></del>{!! $newProduct->product_price !!}
-                                    </p>
-                                </div>
-                                <!-- /.text-->
-                                <!-- /.ribbon-->
-                            </div>
-                            <!-- /.product-->
-                        </div>
-                    @endforeach
+                        @endforeach
                         <!-- /.product-slider-->
+                        </div>
+                        <!-- /.container-->
                     </div>
-                    <!-- /.container-->
+                    <!-- /#hot-->
+                    <!-- *** HOT END ***-->
                 </div>
-                <!-- /#hot-->
-                <!-- *** HOT END ***-->
-            </div>
+            </section>
             <!--
             *** GET INSPIRED ***
             _________________________________________________________
@@ -127,78 +151,80 @@
             </div>
             <!-- *** GET INSPIRED END ***-->
             {{--        new products--}}
-            <div id="hot">
-                <div class="box py-4">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h2 class="mb-0 text-danger">New Products</h2>
+            <section style="background: url('{{asset('/')}}/front-end/imgs/slider1.jpg'); background-size: 100% 100%; background-attachment: fixed;">
+                <div id="hot">
+                    <div class="box py-4">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h2 class="mb-0 text-danger">New Products</h2>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="container">
-                    <div class="product-slider owl-carousel owl-theme">
-                        @foreach($newProducts as $newProduct)
-                            <div class="item">
-                                <div class="product">
-                                    <div class="flip-container">
-                                        <div class="flipper">
-                                            <div class="front">
-                                                <a href="{{ route('product-details', ['id'=>$newProduct->id, 'name'=>$newProduct->product_name]) }}">
-                                                    <img src="{{ asset($newProduct->product_image) }}" alt="" class="img-fluid">
-                                                </a>
-                                            </div>
-                                            <div class="back">
-                                                <a href="{{ route('product-details', ['id'=>$newProduct->id, 'name'=>$newProduct->product_name]) }}">
-                                                    <img src="{{ asset($newProduct->product_image) }}" alt="" class="img-fluid">
-                                                </a>
+                    <div class="container">
+                        <div class="product-slider owl-carousel owl-theme">
+                            @foreach($newProducts as $newProduct)
+                                <div class="item">
+                                    <div class="product">
+                                        <div class="flip-container">
+                                            <div class="flipper">
+                                                <div class="front">
+                                                    <a href="{{ route('product-details', ['id'=>$newProduct->id, 'name'=>$newProduct->product_name]) }}">
+                                                        <img src="{{ asset($newProduct->product_image) }}" alt="" class="img-fluid">
+                                                    </a>
+                                                </div>
+                                                <div class="back">
+                                                    <a href="{{ route('product-details', ['id'=>$newProduct->id, 'name'=>$newProduct->product_name]) }}">
+                                                        <img src="{{ asset($newProduct->product_image) }}" alt="" class="img-fluid">
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <a href="{{ route('product-details', ['id'=>$newProduct->id, 'name'=>$newProduct->product_name]) }}" class="invisible">
-                                        <img src="{{ asset($newProduct->product_image) }}" alt="" class="img-fluid">
-                                    </a>
-                                    <div class="text">
-                                        <h3><a href="{{ route('product-details', ['id'=>$newProduct->id, 'name'=>$newProduct->product_name]) }}">
-                                                {{ $newProduct->product_name }}</a>
-                                        </h3>
-                                        <p class="price">
-                                            <del></del>{{$newProduct->product_price}}
-                                        </p>
+                                        <a href="{{ route('product-details', ['id'=>$newProduct->id, 'name'=>$newProduct->product_name]) }}" class="invisible">
+                                            <img src="{{ asset($newProduct->product_image) }}" alt="" class="img-fluid">
+                                        </a>
+                                        <div class="text">
+                                            <h3><a href="{{ route('product-details', ['id'=>$newProduct->id, 'name'=>$newProduct->product_name]) }}">
+                                                    {{ $newProduct->product_name }}</a>
+                                            </h3>
+                                            <p class="price">
+                                                <del></del>{{$newProduct->product_price}}
+                                            </p>
 
-                                        <p class="buttons">
-                                            <a href="{{ route('product-details', ['id'=>$newProduct->id, 'name'=>$newProduct->product_name]) }}" class="btn btn-outline-secondary">View detail </a>
-                                            <a href="" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                        </p>
+                                            <p class="buttons">
+                                                <a href="{{ route('product-details', ['id'=>$newProduct->id, 'name'=>$newProduct->product_name]) }}" class="btn btn-outline-secondary">View detail </a>
+                                                <a href="" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                            </p>
+                                        </div>
+                                        <!-- /.text-->
+                                        <div class="ribbon sale">
+                                            <div class="theribbon">CLICK</div>
+                                            <div class="ribbon-background"></div>
+                                        </div>
+                                        <!-- /.ribbon-->
+                                        <div class="ribbon new">
+                                            <div class="theribbon">ADD</div>
+                                            <div class="ribbon-background"></div>
+                                        </div>
+                                        <!-- /.ribbon-->
+                                        <div class="ribbon gift">
+                                            <div class="theribbon">CART</div>
+                                            <div class="ribbon-background"></div>
+                                        </div>
+                                        <!-- /.ribbon-->
                                     </div>
-                                    <!-- /.text-->
-                                    <div class="ribbon sale">
-                                        <div class="theribbon">CLICK</div>
-                                        <div class="ribbon-background"></div>
-                                    </div>
-                                    <!-- /.ribbon-->
-                                    <div class="ribbon new">
-                                        <div class="theribbon">ADD</div>
-                                        <div class="ribbon-background"></div>
-                                    </div>
-                                    <!-- /.ribbon-->
-                                    <div class="ribbon gift">
-                                        <div class="theribbon">CART</div>
-                                        <div class="ribbon-background"></div>
-                                    </div>
-                                    <!-- /.ribbon-->
+                                    <!-- /.product-->
                                 </div>
-                                <!-- /.product-->
-                            </div>
                         @endforeach
                         <!-- /.product-slider-->
+                        </div>
+                        <!-- /.container-->
                     </div>
-                    <!-- /.container-->
+                    <!-- /#hot-->
+                    <!-- *** new products END ***-->
                 </div>
-                <!-- /#hot-->
-                <!-- *** new products END ***-->
-            </div>
+            </section>
             <!--
             *** BLOG HOMEPAGE ***
             _________________________________________________________
@@ -240,8 +266,11 @@
             <!-- *** BLOG HOMEPAGE END ***-->
         </div>
     </div>
+    <script>
 
+    </script>
 @endsection
+
 
 
 

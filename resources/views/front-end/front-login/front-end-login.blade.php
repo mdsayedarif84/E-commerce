@@ -87,7 +87,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    {!! Form::open([''=>'', 'method'=>'POST' ]) !!}
+                                    {!! Form::open(['route'=>'/', 'method'=>'POST' ]) !!}
                                     <div class="form-group">
                                         <input id="email-modal" name="email" type="text" placeholder="email" class="form-control">
                                     </div>

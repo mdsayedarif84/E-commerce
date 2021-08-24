@@ -1,1 +1,7 @@
 /* your styles go here */
+.add-section{
+    background: url("../../product-image/Apple Macintosh.jpg");
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+

@@ -5,6 +5,13 @@
 @endsection
 @section('body')
     <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h4>Manage Product
+                    <a href="{!! route('add-product') !!}" class="btn btn-primary btn-sm float-right">Add Product</a>
+                </h4>
+            </div>
+        </div>
         <form method="post" action="">
             <table class="table table-dark table-striped">
                 @if($message   =   Session::get('message'))
@@ -36,21 +43,21 @@
                         <td>{{ $product->publication_status == 1 ? 'published' : 'Unpublished' }}</td>
                         <td>
                             <a class="btn btn-success btn-sm" href="" title="View Details">
-                                <span class=" fas fa-edit fa-sm"></span>
+                                <span class=" fa fa-eye fa-sm"></span>
                             </a>
                             @if($product->publication_status == 1)
-                                <a class="btn btn-info btn-sm" href="" title="Published">
+                                <a class="btn btn-info btn-sm" href="{!! route('unpublished-product',['id'=>$product->id]) !!}" title="Published">
                                     <span class=" fas fa-arrow-up fa-sm"></span>
                                 </a>
                             @else
-                                <a class="btn btn-warning btn-sm" href="" title="UnPublished">
+                                <a class="btn btn-warning btn-sm" href="{!! route('published-product',['id'=>$product->id]) !!}" title="UnPublished">
                                     <span class=" fas fa-arrow-down fa-sm"></span>
                                 </a>
                             @endif
                             <a class="btn btn-success btn-sm" href="{{ route('edit-product',['id'=>$product->id]) }}" title="Edit">
                                 <span class=" fas fa-edit fa-sm"></span>
                             </a>
-                            <a href="" onclick="return confirm('Are you sure to delete this Brand ??')" class="btn btn-danger btn-sm" title="Delete">
+                            <a href="{!! route('delete-product',['id'=>$product->id]) !!}" onclick="return confirm('Are you sure to delete this Brand ??')" class="btn btn-danger btn-sm" title="Delete">
                                 <span class=" fas fa-trash fa-sm"></span>
                             </a>
                         </td>
