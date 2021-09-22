@@ -12,6 +12,7 @@
     ]);
     Route::get('/product-details/{id}/{name}',
       [ App\Http\controllers\MyShopController::class,'productDetails'] )->name('product-details');
+
     //CART START
     Route::post('/cart/add',[
         'uses'=>'App\Http\Controllers\CartController@addToCart',
@@ -29,19 +30,23 @@
         'uses'=>'App\Http\Controllers\CartController@updateCart',
         'as' =>'update-cart'
     ]);
+
+    //checkout
     Route::get('/checkout',[
         'uses'=>'App\Http\Controllers\CheckoutController@index',
         'as' =>'checkout'
     ]);
-    //CheckoutController
-    Route::post('/customer/registration',[
+	Route::post('/customer/registration',[
         'uses'=>'App\Http\Controllers\CheckoutController@customerSignUP',
         'as' =>'customer-sign-up'
     ]);
+
+    //CheckoutController
     Route::post('/checkout/customer-login',[
         'uses'=>'App\Http\Controllers\CheckoutController@customerLoginCheck',
         'as' =>'customer-login'
     ]);
+
     // TopHeader customer logout & login
     Route::post('/customer/customer-logout',[
         'uses'=>'App\Http\Controllers\CheckoutController@customerLogout',
@@ -71,9 +76,15 @@
         'uses'=>'App\Http\Controllers\CheckoutController@completeOrder',
         'as' =>'complete-order'
     ]);
+
+    //ajax email check controller
+    Route::get('/ajax-email-check/{email}',
+        [ App\Http\controllers\CheckoutController::class,'ajaxEmailCheck'] )->name('ajax-email-check');
+
     //Authentication file
     Auth::routes();
     Route::get('/home',[App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
     //    Admin Panel route //slider
     Route::get('/home.slider',
         [ App\Http\controllers\SlideImageController::class,'sliderImage'] )->name('view-slider');
@@ -85,6 +96,7 @@
         [ App\Http\controllers\SlideImageController::class,'edit'] )->name('edit-slider');
     Route::put('update.slider/{id}',
         [ App\Http\controllers\SlideImageController::class,'update'] );
+
     //middleware
     Route::group(['middleware'=>'login.check'],function(){
         //category info
@@ -105,6 +117,7 @@
             [ App\Http\controllers\CategoryController::class,'updateCategoryInfo'] )->name('update-category');
         Route::get('/category/delete-category/{id}',
             [ App\Http\controllers\CategoryController::class,'deleteCategoryInfo'] )->name('delete-category');
+
         //brand info
         Route::get('/brand/add-brand',
             [ App\Http\controllers\BrandController::class,'index'] )->name('add-brand');
@@ -122,6 +135,7 @@
             [ App\Http\controllers\BrandController::class,'updateBrandInfo'] )->name('update-brand');
         Route::get('/brand/delete-brand/{id}',
             [ App\Http\controllers\BrandController::class,'deleteBrandInfo'] )->name('delete-brand');
+
         //product info
         Route::get('/product/add',
             [ App\Http\controllers\ProductController::class,'index'] )->name('add-product');
@@ -139,6 +153,7 @@
             [ App\Http\controllers\ProductController::class,'updateProduct'] )->name('update-product');
         Route::get('/product/delete/{id}',
             [ App\Http\controllers\ProductController::class,'deleteProductInfo'] )->name('delete-product');
+
         //Manage Order
         Route::get('/order/manage',
             [ App\Http\controllers\OrderController::class,'manageOrderInfo'] )->name('manage-order');

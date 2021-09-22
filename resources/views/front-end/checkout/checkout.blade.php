@@ -16,7 +16,7 @@
                     </div>
                     <div id="checkout" class="col-lg-8">
                         <div class="box">
-                            <h1 class="text-center text-primary">Custome Sign Up</h1>
+                            <h1 class="text-center text-primary">Customer Sign Up</h1>
                             {!! Form::open([ 'route'=>'customer-sign-up' ,'method'=>'POST' ]) !!}
                                 <div class="content py-3">
                                     <div class="row">
@@ -37,26 +37,26 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="email">Email</label>
+                                                <label for="email">Email - </label>  <span class="text-danger" id="res"></span>
                                                 <input name="email" id="email" type="text" class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="company">Password</label>
-                                                <input name="password" id="company" type="text" class="form-control">
+                                                <label for="pwd">Password-</label>
+                                                <input name="password" id="pwd" type="password" class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="street">Confirm Password</label>
-                                                <input name="confirm_password" id="street" type="text" class="form-control">
+                                                <label for="cpwd">Confirm Password -</label> <span class="text-danger" id="match"></span>
+                                                <input name="confirm_password" id="cpwd" type="password" class="form-control">
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="phone">Phone Number </label>
-                                                <input name="phone_number" id="phone" type="text" class="form-control">
+                                                <input name="phone_number" id="phone" type="number" class="form-control">
                                             </div>
                                         </div>
                                     </div>
@@ -71,7 +71,7 @@
                                         </div>
                                         <div class="col-md-6 col-lg-2"></div>
                                         <div class="text-center col-md-12">
-                                            <button type="submit" class="btn btn-primary"><i class="fa fa-user-md"></i> Register</button>
+                                            <button type="submit" id="btn" class="btn btn-primary"><i class="fa fa-user-md"></i> Register</button>
                                         </div>
                                     </div>
                                     <!-- /.row-->
@@ -93,7 +93,7 @@
                                 <div class="table-responsive">
                                     {!! Form::open(['route'=>'customer-login', 'method'=>'POST' ]) !!}
                                         <div class="form-group">
-                                            <input id="email-modal" name="email" type="text" placeholder="email" class="form-control">
+                                            <input id="email-modal" name="email" type="email" placeholder="email" class="form-control">
                                         </div>
                                         <div class="form-group">
                                             <input id="password-modal" name="password" type="password" placeholder="password" class="form-control">
@@ -115,5 +115,62 @@
         </div>
     </div>
 
+{{--    <script>--}}
+{{--        document.querySelector('#btn').onclick = function (){--}}
+{{--            var pwd     =   document.querySelector('#pwd').value,--}}
+{{--            cpwd =    document.querySelector('#cpwd').value;--}}
+{{--            // cpwd =    document.querySelector('#cpwd').value;--}}
+{{--            if (pwd ==""){--}}
+{{--                alert('Field is empty  match');--}}
+{{--            }else if(pwd != cpwd){--}}
+{{--                $('#match').html('Password Do not Match');--}}
+{{--                $('#match').css('color','red');--}}
+{{--                // alert('password do not match')--}}
+{{--                return false;--}}
+{{--            }else if(pwd == cpwd){--}}
+{{--                $('#match').html('Password Match');--}}
+{{--                $('#match').css('color','red');--}}
+{{--                // alert('password  match');--}}
+{{--            }return true;--}}
+{{--        }--}}
+{{--    </script>--}}
+
+    <script type="text/javascript">
+        $(document).ready(function (){
+            $('#cpwd').keyup(function (){
+                var pwd    =   $('#pwd').val();
+                var cpwd   =   $('#cpwd').val();
+                if(cpwd != pwd ){
+                    $('#match').html('Password is not match');
+                        $('#match').css('color','red');
+                    return false;
+                }else if(cpwd == pwd){
+                    $('#match').html('Password match');
+                    $('#match').css('color','black');
+                    return true;
+                }
+            });
+        });
+    </script>
+    <script>
+        var email    =   document.getElementById('email');
+        email.onblur =   function (){
+            var email    =   document.getElementById('email').value;
+            var xmlHttp     =   new XMLHttpRequest();
+            var serverPage  =   "http://localhost/ecommerce/public/ajax-email-check/"+email;
+            xmlHttp.open('GET', serverPage);
+            xmlHttp.onreadystatechange  =   function (){
+                if (xmlHttp.readyState == 4 && xmlHttp.status  ==  200){
+                    document.getElementById('res').innerHTML   =   xmlHttp.responseText;
+                    if (xmlHttp.responseText == 'This Email Already exist.Try new email'){
+                        document.getElementById('regBtn').disabled  =    true;
+                    }else {
+                        document.getElementById('regBtn').disabled  =    false;
+                    }
+                }
+            }
+            xmlHttp.send(null);
+        }
+    </script>
 @endsection
 
